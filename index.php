@@ -8,7 +8,16 @@
 <div class="main_wrapper">
 
     <div class="header_logo">
-        This is header logo
+        <a href="index.php">
+        <img id="logo" src="images/imocha-logo.png"/>
+        </a>
+    </div> <!-- /.header logo-->
+
+    <div id="form">
+        <form method="get" action="results.php" enctype="multipart/form-data"/>
+        <input type="text" name="user_query" placeholder="Search a product" />
+        <input type="submit" name="search" value="Search" />
+
     </div>
 
     <div class="content_wrapper">
