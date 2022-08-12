@@ -1,15 +1,18 @@
 <html>
 <head>
     <title> Online shop </title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 <!-- Main container starts here-->
 <div class="main_wrapper">
 
+    <div class="header_wrapper">
+
     <div class="header_logo">
         <a href="index.php">
-        <img id="logo" src="images/imocha-logo.png"/>
+        <img id="logo" src="images/hrmforce.png"/>
         </a>
     </div> <!-- /.header logo-->
 
@@ -19,6 +22,8 @@
         <input type="submit" name="search" value="Search" />
 
     </div>
+
+    </div> <!-- /.header_wrapper-->
 
     <div class="content_wrapper">
         This is content
