@@ -53,8 +53,22 @@
     </div>
 
     <div class="content_wrapper">
-        This is content
+        <div id="sidebar">
+            <div id="sidebar_title">Categories</div>
+            <ul id="cats">
+                <li> <a href="index.php">Laptop</a></li>
+                <li> <a href="index.php">Cameras</a></li>
+                <li> <a href="index.php">Mobiles</a></li>
+            </ul>
 
+            <div id="sidebar_title">Brands</div>
+            <ul id="cats">
+                <li> <a href="index.php">HP</a></li>
+                <li> <a href="index.php">Dell</a></li>
+                <li> <a href="index.php">LG</a></li>
+            </ul>
+
+        </div>
     </div> <!-- /.content_wrapper-->
 
     <div id="footer">
