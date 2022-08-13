@@ -10,18 +10,30 @@
 
     <div class="header_wrapper">
 
-    <div class="header_logo">
-        <a href="index.php">
-        <img id="logo" src="images/hrmforce.png"/>
-        </a>
-    </div> <!-- /.header logo-->
+        <div class="header_logo">
+            <a href="index.php">
+            <img id="logo" src="images/hrmforce.png" alt="logo"/>
+            </a>
+        </div> <!-- /.header logo-->
 
-    <div id="form">
-        <form method="get" action="results.php" enctype="multipart/form-data"/>
-        <input type="text" name="user_query" placeholder="Search a product" />
-        <input type="submit" name="search" value="Search" />
+        <div id="form">
+            <form method="get" action="results.php" enctype="multipart/form-data"/>
+            <input type="text" name="user_query" placeholder="Search a product" />
+            <input type="submit" name="search" value="Search" />
+        </div>
 
-    </div>
+        <div class="cart">
+            <ul>
+                <li class="dropdown_header_cart">
+                    <div id="notification_total_cart" class="shopping-cart">
+                        <img src="images/cart_icon.png" id="cart_image" alt="cart_icon"/>
+                    </div>
+
+                </li>
+            </ul>
+
+        </div>
+
 
     </div> <!-- /.header_wrapper-->
 
