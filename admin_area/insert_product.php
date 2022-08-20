@@ -44,7 +44,7 @@ include ('includes/db.php')
                     <td align="right"><b>Product Brand:</b>
                     </td>
                     <td>
-                        <select name="product_cat">
+                        <select name="product_brand">
                             <option>Select a Brand</option>
 
                             <?php
@@ -111,7 +111,7 @@ if(isset($_POST['insert_post'])){
 
     if($insert_pro) {
         echo "<script>alert('Mahsulotlat qushildi')</script>";
-        echo "<script>window.open('index.php?insert_product','_self')</script>";
+        //echo "<script>window.open('index.php?insert_product','_self')</script>";
     }
 }
 ?>
