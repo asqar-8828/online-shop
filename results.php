@@ -1,5 +1,6 @@
 
-<?php include('includes/header.php') ?>
+<?php
+include('includes/header.php'); ?>
 
 <div class="menubar">
     <ul id="menu">
@@ -37,6 +38,7 @@
         <div id="products_box">
             <?php
             if (isset($_GET['search'])) {
+                global $con;
 
                 $search_query = $_GET['user_query'];
 

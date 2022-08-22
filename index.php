@@ -1,6 +1,16 @@
 
-<?php include('includes/header.php') ?>
+<?php
+include('includes/header.php'); ?>
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title> Online shop </title>
+
+    <link rel="stylesheet" href="styles/style.css" media="all">
+</head>
+
+<body>
     <div class="menubar">
         <ul id="menu">
             <li><a href="index.php">Home</a></li>
@@ -34,6 +44,8 @@
         </div><!-- /#sidebar-->
 
         <div id="content_area">
+            <?php cart(); ?>
+
             <div id="products_box">
                 <?php getPro(); ?>
 
@@ -47,3 +59,12 @@
         </div>
     </div> <!-- /.content_wrapper-->
 <?php include ('includes/footer.php') ?>
+
+</div> <!-- /.main_wrapper -->
+
+<!-- End Main container here-->
+
+</body>
+
+
+</html>

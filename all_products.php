@@ -1,5 +1,6 @@
 
-<?php include('includes/header.php') ?>
+<?php
+include('includes/header.php'); ?>
 
 <div class="menubar">
     <ul id="menu">
@@ -36,6 +37,7 @@
     <div id="content_area">
         <div id="products_box">
             <?php
+            global $con;
 
             $get_pro = " select * from products";
             $run_pro = mysqli_query($con, $get_pro);

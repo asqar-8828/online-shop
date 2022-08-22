@@ -85,6 +85,14 @@ time, mark, audio, video {
     width: auto;
     z-index: 1;
 }
+.cart .noti_cart_number {
+    background: red;
+    color: white;
+    position: absolute;
+    top: -5px;
+    left: 40px;
+    padding: 1px 3px 1px 3px;
+}
 .register_login {
     float: left;
     width: 150px;

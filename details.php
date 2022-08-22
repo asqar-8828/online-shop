@@ -1,5 +1,6 @@
 
-<?php include('includes/header.php') ?>
+<?php
+include('includes/header.php'); ?>
 
 <div class="menubar">
     <ul id="menu">
@@ -38,8 +39,9 @@
 
             <?php
             if (isset($_GET['pro_id'])) {
+                global $con;
                 $product_id =  $_GET['pro_id'];
-                $run_query_by_pro_id = mysqli_query($con, "select * from products where product_id=$product_id");
+                $run_query_by_pro_id = mysqli_query($con, "select * from products where product_id='$product_id'");
 
                 while ($row_pro = mysqli_fetch_array($run_query_by_pro_id)) {
                     $pro_id = $row_pro['product_id'];
@@ -60,6 +62,7 @@
                                 <button style='float: right'>Add to Cart</button>
                             </a>
                         </div>
+                        
                         ";
 
                 }
