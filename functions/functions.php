@@ -25,11 +25,38 @@ function cart() {
 
             $pro_title = $fetch_pro['product_title'];
 
-            $run_insert_pro = mysqli_query($con, "INSERT INTO `cart` (`product_id`, `product_title`, `ip_address`, `quality`) values ('$product_id','$pro_title','$ip','')");
+            $run_insert_pro = mysqli_query($con, "INSERT INTO `cart` (`product_id`, `product_title`, `ip_address`) values ('$product_id','$pro_title','$ip')");
 
 
         }
     }
+}
+
+function total_price() {
+    global $con;
+    $total = 0;
+    $ip = get_ip();
+    $run_cart = mysqli_query($con, "select * from cart where ip_address = '$ip' ");
+    while ($fetch_cart = mysqli_fetch_array($run_cart)) {
+        $product_id = $fetch_cart['product_id'];
+        $result_product = mysqli_query($con, "select * from products where product_id = '$product_id'");
+        while ($fetch_product = mysqli_fetch_array($result_product)) {
+            $product_price = array($fetch_product['product_price']);
+            $product_title = $fetch_product['product_title'];
+            $product_image = $fetch_product['product_image'];
+            $sing_price = $fetch_product['product_price'];
+            $values = array_sum($product_price);
+            //Getting quality of the product
+            $run_qty = mysqli_query($con, "select * from cart where product_id = '$product_id'");
+            $row_qty = mysqli_fetch_array($run_qty);
+            $qty = $row_qty['quality'];
+            $values_qty = $values * $qty;
+            $total += $values_qty;
+
+        }
+
+    }
+    echo "$".$total;
 }
 
 function total_items() {

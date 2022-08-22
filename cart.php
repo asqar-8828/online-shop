@@ -54,7 +54,7 @@ include('includes/header.php'); ?>
             }
             ?>
 
-            <b style="color: navy">Your Cart - </b> Total Items: <?php total_items(); ?> Total Price: <?php  ?>
+            <b style="color: navy">Your Cart - </b> Total Items: <?php total_items(); ?> Total Price: <?php total_price(); ?>
 
         </div>
 
