@@ -44,6 +44,9 @@ include('includes/header.php'); ?>
     </div><!-- /#sidebar-->
 
     <div id="content_area">
+        <div class="shopping_cart_container">
+
+
         <div id="shopping_cart" style="align: right; padding: 15px">
             <?php
             if (isset($_SESSION['customer_email'])) {
@@ -56,7 +59,68 @@ include('includes/header.php'); ?>
 
             <b style="color: navy">Your Cart - </b> Total Items: <?php total_items(); ?> Total Price: <?php total_price(); ?>
 
-        </div>
+        </div> <!--/.shopping_cart-->
+            <form action="" method="post" enctype="multipart/form-data">
+
+            <table style="text-align: center; width: 100%" >
+                <tr style="text-align: center">
+                    <th>Remove</th>
+                    <th>Product</th>
+                    <th>Quality</th>
+                    <th>Price</th>
+                </tr>
+
+                <?php
+                $total = 0;
+                $ip = get_ip();
+                $run_cart = mysqli_query($con, "select * from cart where ip_address = '$ip' ");
+                while ($fetch_cart = mysqli_fetch_array($run_cart)) {
+                    $product_id = $fetch_cart['product_id'];
+                    $result_product = mysqli_query($con, "select * from products where product_id = '$product_id'");
+                    while ($fetch_product = mysqli_fetch_array($result_product)) {
+                        $product_price = array($fetch_product['product_price']);
+                        $product_title = $fetch_product['product_title'];
+                        $product_image = $fetch_product['product_image'];
+                        $sing_price = $fetch_product['product_price'];
+                        $values = array_sum($product_price);
+                        //Getting quality of the product
+                        $run_qty = mysqli_query($con, "select * from cart where product_id = '$product_id'");
+                        $row_qty = mysqli_fetch_array($run_qty);
+                        $qty = $row_qty['quality'];
+                        $values_qty = $values * $qty;
+                        $total += $values_qty;
+
+
+
+                ?>
+
+                <tr style="text-align: center">
+                    <td><input type="checkbox" name="remove[]" value=""/></td>
+                    <td><?php echo $product_title;?>
+                    <br/>
+                    <img src="admin_area/product_images/<?php echo $product_image; ?>" style="width: 100px; height: 100px;" />
+                    </td>
+                    <td><input type="text" size="4" name="qty" value="<?php echo $qty;?>"/></td>
+                    <td><?php echo "$" . $sing_price;?></td>
+                </tr>
+
+                <?php } } // End While ?>
+
+                <tr>
+                    <td colspan="4" align="right"><b>Sub Total:</b></td>
+                    <td><?php echo total_price();?></td>
+                </tr>
+
+
+
+                <tr style="text-align: center">
+                    <td colspan="2"><input type="submit" name="update_cart" value="Update Cart"></td>
+                    <td><input type="submit" name="continue" value="Continue Shopping" /> </td>
+                    <td><button><a href="checkout.php" style="text-decoration: none; color: black;" >Checkout</a></button></td>
+                </tr>
+            </table>
+            </form>
+        </div> <!--/.shopping_cart_container-->
 
 
         <div id="products_box">
