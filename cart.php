@@ -71,6 +71,7 @@ include('includes/header.php'); ?>
                 </tr>
 
                 <?php
+                global $con;
                 $total = 0;
                 $ip = get_ip();
                 $run_cart = mysqli_query($con, "select * from cart where ip_address = '$ip' ");
@@ -98,7 +99,7 @@ include('includes/header.php'); ?>
                     <td><input type="checkbox" name="remove[]" value=""/></td>
                     <td><?php echo $product_title;?>
                     <br/>
-                    <img src="admin_area/product_images/<?php echo $product_image; ?>" style="width: 100px; height: 100px;" />
+                    <img src="admin_area/product_images/<?php echo $product_image; ?>"  />
                     </td>
                     <td><input type="text" size="4" name="qty" value="<?php echo $qty;?>"/></td>
                     <td><?php echo "$" . $sing_price;?></td>
@@ -116,7 +117,7 @@ include('includes/header.php'); ?>
                 <tr style="text-align: center">
                     <td colspan="2"><input type="submit" name="update_cart" value="Update Cart"></td>
                     <td><input type="submit" name="continue" value="Continue Shopping" /> </td>
-                    <td><button><a href="checkout.php" style="text-decoration: none; color: black;" >Checkout</a></button></td>
+                    <td><button><a href="checkout.php" >Checkout</a></button></td>
                 </tr>
             </table>
             </form>
