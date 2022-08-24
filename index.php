@@ -53,11 +53,4 @@ include('includes/header.php'); ?>
     </div> <!-- /.content_wrapper-->
 <?php include ('includes/footer.php') ?>
 
-</div> <!-- /.main_wrapper -->
 
-<!-- End Main container here-->
-
-</body>
-
-
-</html>
