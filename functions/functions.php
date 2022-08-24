@@ -27,6 +27,7 @@ function cart() {
 
             $run_insert_pro = mysqli_query($con, "INSERT INTO `cart` (`product_id`, `product_title`, `ip_address`) values ('$product_id','$pro_title','$ip')");
 
+            echo "<script>window.open('index.php','_self')</script>";
 
         }
     }

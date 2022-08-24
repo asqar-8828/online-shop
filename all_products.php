@@ -1,8 +1,7 @@
-
 <?php
 include('includes/header.php'); ?>
 
-<div class="menubar">
+    <div class="menubar">
     <ul id="menu">
         <li><a href="index.php">Home</a></li>
         <li><a href="all_products.php">All Products</a></li>

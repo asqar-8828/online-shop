@@ -96,7 +96,7 @@ include('includes/header.php'); ?>
                 ?>
 
                 <tr style="text-align: center">
-                    <td><input type="checkbox" name="remove[]" value=""/></td>
+                    <td><input type="checkbox" name="remove[]" value="<?php echo $product_id; ?>"/></td>
                     <td><?php echo $product_title;?>
                     <br/>
                     <img src="admin_area/product_images/<?php echo $product_image; ?>"  />
@@ -121,6 +121,22 @@ include('includes/header.php'); ?>
                 </tr>
             </table>
             </form>
+
+            <?php
+            if (isset($_POST['remove'])) {
+                foreach ($_POST['remove'] as $remove_id) {
+                    $run_delete = mysqli_query($con, "delete from cart where product_id = '$remove_id' AND ip_address = '$ip'");
+
+                    if ($run_delete) {
+                        echo "<script>window.open('cart.php','_self')</script>";
+                    }
+                }
+            }
+            if (isset($_POST['continue'])) {
+                echo "<script>window.open('index.php','_self')</script>";
+
+            }
+            ?>
         </div> <!--/.shopping_cart_container-->
 
 

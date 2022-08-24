@@ -1,14 +1,7 @@
 
 <?php
 include('includes/header.php'); ?>
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title> Online shop </title>
-
-    <link rel="stylesheet" href="styles/style.css" media="all">
-</head>
 
 <body>
     <div class="menubar">

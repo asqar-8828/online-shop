@@ -4,7 +4,14 @@ include ("functions/functions.php");
 
 include ("includes/db.php");
 ?>
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title> Online shop </title>
+
+    <link rel="stylesheet" href="styles/style.css" >
+</head>
 
 
 <!-- Main container starts here-->
