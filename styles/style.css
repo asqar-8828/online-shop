@@ -251,6 +251,26 @@ time, mark, audio, video {
 
 }
 
+.login_box {
+    width: 100%;
+    float: left;
+    padding: 15px;
+    background: white;
+
+}
+.login_box input[type=text], .login_box input[type=password] {
+    width: 60%;
+    padding: 3px 10px;
+    margin: 5px 0;
+
+}
+.login_box input[type=submit] {
+    padding: 10px 15px;
+    background: rgba(28, 130, 199, 0.9);
+    border: 0.01px solid rgba(28, 130, 199, 0.8);
+    color: white;
+}
+
 #footer {
     width: 1000px;
     height: 100px;
