@@ -46,7 +46,28 @@
 
 <?php
 if(isset($_POST['login'])) {
-    echo $_POST['email'] . "<br />";
-    echo $_POST['password'];
+    global $con;
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $run_login = mysqli_query($con, "select * from users where password='$password' AND email = '$email'");
+    $check_login = mysqli_num_rows($run_login);
+    if ($check_login==0) {
+        echo "<script>alert ('Password or Email is incorrect, please try again!') </script>";
+        exit();
+    }
+    $ip = get_ip();
+    $run_cart = mysqli_query($con, "select * from cart where ip_address = '$ip'");
+    $check_cart = mysqli_num_rows($run_cart);
+    if ($check_login > 0 AND $check_cart == 0) {
+        $_SESSION['email'] = $email;
+        echo "<script>alert ('You has logged successfully ') </script>";
+        echo "<script>window.open('customer/my_account.php', '_self')</script>";
+
+    } else {
+        $_SESSION['email'] = $email;
+        echo "<script>alert ('You has logged successfully ') </script>";
+        echo "<script>window.open('checkout.php', '_self')</script>";
+    }
 }
 ?>
