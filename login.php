@@ -20,7 +20,7 @@
             </tr>
             <tr align="left">
                 <td ></td>
-                <td colspan="4">
+                <td colspan="4" class="forgot_pass">
                     <a href="checkout.php?forgot_pass">
                         Forgot Password
                     <a/>
@@ -42,3 +42,11 @@
     </form>
 
 </div>
+
+
+<?php
+if(isset($_POST['login'])) {
+    echo $_POST['email'] . "<br />";
+    echo $_POST['password'];
+}
+?>

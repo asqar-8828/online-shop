@@ -269,6 +269,7 @@ time, mark, audio, video {
     background: rgba(28, 130, 199, 0.9);
     border: 0.01px solid rgba(28, 130, 199, 0.8);
     color: white;
+    margin-top: 5px;
 }
 
 #footer {

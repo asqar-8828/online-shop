@@ -17,10 +17,10 @@ include('includes/header.php'); ?>
 
 <div class="content_wrapper">
    <?php
-   if (!isset($_SESSION['customer_email'])) {
-       include ('customer_login.php');
+   if (!isset($_SESSION['email'])) {
+       include('login.php');
    } else {
-       include ('pament.php');
+       include ('payment.php');
    }
 
 
