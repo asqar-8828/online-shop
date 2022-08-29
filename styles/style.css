@@ -161,6 +161,9 @@ time, mark, audio, video {
     border: 1px;
     border-radius: 2px;
 }
+.register a {
+    color: white;
+}
 .menubar {
     width: 1000px;
     height: 50px;

@@ -41,11 +41,15 @@ include('includes/header.php'); ?>
             <?php cart(); ?>
 
             <div id="products_box">
+                <?php if (!isset($_GET['action'])) { ?>
                 <?php getPro(); ?>
 
                 <?php get_pro_by_cat_id(); ?>
 
                 <?php get_pro_by_brand_id(); ?>
+                <?php } else { ?>
+                <?php include ('login.php'); ?>
+                <?php } ?>
 
 
             </div><!--/#products_box-->

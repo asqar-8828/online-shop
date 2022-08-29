@@ -6,17 +6,17 @@
                 <td colspan="4">
                     <h2>Login.</h2><br>
                     <span>
-                        Don't have account? <a href="customer_register.php">Register here</a> <br> <br>
+                        Don't have account? <a href="register.php">Register here</a> <br> <br>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td width="15%"><b>Email: </b></td>
-                <td colspan="3"><input type="text" name="email" placeholder="Email" /></td>
+                <td colspan="3"><input type="text" name="email" placeholder="Email"></td>
             </tr>
             <tr>
                 <td width="15%"><b>Password: </b></td>
-                <td colspan="3"><input type="password" name="password" placeholder="Password" /></td>
+                <td colspan="3"><input type="password" name="password" placeholder="Password"></td>
             </tr>
             <tr align="left">
                 <td ></td>
