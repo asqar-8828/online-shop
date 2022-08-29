@@ -254,25 +254,34 @@ time, mark, audio, video {
 
 }
 
-.login_box {
+.login_box, .register_box {
     width: 100%;
     float: left;
     padding: 15px;
     background: white;
 
 }
-.login_box input[type=text], .login_box input[type=password] {
+.login_box input[type=text], .login_box input[type=password], .register_box input[type=text], .register_box input[type=password] {
     width: 60%;
     padding: 3px 10px;
     margin: 5px 0;
 
 }
-.login_box input[type=submit] {
+.login_box input[type=submit], .register_box input[type=submit] {
     padding: 10px 15px;
     background: rgba(28, 130, 199, 0.9);
     border: 0.01px solid rgba(28, 130, 199, 0.8);
     color: white;
     margin-top: 5px;
+}
+.register_box select{
+    width: 40%;
+    padding: 3px 10px;
+    margin: 5px 0;
+
+}
+.register_box input[type=file] {
+    margin:5px 0;
 }
 
 #footer {
