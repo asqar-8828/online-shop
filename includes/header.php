@@ -12,9 +12,9 @@ include ("includes/db.php");
 <head>
     <title> Online shop </title>
 
-    <link rel="stylesheet" href="styles/style.css" >
+    <link rel="stylesheet" href="styles/style.css" media="all"/>
+    <script src="js/jquery-3.6.1.js"></script>
 </head>
-
 
 <!-- Main container starts here-->
 <div class="main_wrapper">
