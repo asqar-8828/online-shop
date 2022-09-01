@@ -136,6 +136,27 @@ $(document).ready(function () {
                 move_uploaded_file($image_tmp,"customer/customer_images/$image");
 
                 $run_insert = mysqli_query($con, "insert into users (ip_address, name, email, password, country, city, contact, user_address, image) values ('$ip','$name','$email','$hash_password','$country','$city','$contact','$address','$image') ");
+                if ($run_insert) {
+                    $sel_user = mysqli_query($con, "select * from users where email = '$email'");
+                    $row_user = mysqli_fetch_array($sel_user);
+
+                    $_SESSION['user_id'] = $row_user['id'] . "<br>";
+                    $_SESSION['role'] = $row_user['role'];
+                }
+
+                $run_cart = mysqli_query($con, "select * from cart where ip_address = '$ip'");
+                $check_cart = mysqli_num_rows($run_cart);
+
+                if ($check_cart == 0) {
+                    $_SESSION['email'] = $email;
+                    echo "<script> alert('Account has been created successfully')</script>";
+                    echo "<script>window.open('customer/my_account.php','_self')</script>";
+                } else {
+                    $_SESSION['email'] = $email;
+                    echo "<script> alert('Account has been created successfully')</script>";
+                    echo "<script>window.open('checkout.php','_self')</script>";
+                }
+
             }
 
         }
