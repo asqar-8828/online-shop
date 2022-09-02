@@ -12,11 +12,11 @@
             </tr>
             <tr>
                 <td width="15%"><b>Email: </b></td>
-                <td colspan="3"><input type="text" name="email" placeholder="Email"></td>
+                <td colspan="3"><input type="text" name="email" required placeholder="Email"></td>
             </tr>
             <tr>
                 <td width="15%"><b>Password: </b></td>
-                <td colspan="3"><input type="password" name="password" placeholder="Password"></td>
+                <td colspan="3"><input type="password" name="password" required placeholder="Password"></td>
             </tr>
             <tr align="left">
                 <td ></td>

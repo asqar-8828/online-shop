@@ -4,17 +4,6 @@ include('includes/header.php'); ?>
 
 
 <body>
-<div class="menubar">
-    <ul id="menu">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="all_products.php">All Products</a></li>
-        <li><a href="customer/my_account.php">My Account</a></li>
-        <li><a href="cart.php">Shopping Cart</a></li>
-        <li><a href="contact.php">Contact Us</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ul>
-
-</div>
 
 <div class="content_wrapper">
 <script>
@@ -48,19 +37,19 @@ $(document).ready(function () {
                 </tr>
                 <tr>
                     <td width="15%"><b>Name: </b></td>
-                    <td colspan="3"><input type="text" name="name" placeholder="Name" ></td>
+                    <td colspan="3"><input type="text" name="name" required placeholder="Name" ></td>
                 </tr>
                 <tr>
                     <td width="15%"><b>Email: </b></td>
-                    <td colspan="3"><input type="text" name="email" placeholder="Email" ></td>
+                    <td colspan="3"><input type="text" name="email" required placeholder="Email" ></td>
                 </tr>
                 <tr>
                     <td width="15%"><b>Password: </b></td>
-                    <td colspan="3"><input type="password" id="password_confirm1" name="password" placeholder="Password" ></td>
+                    <td colspan="3"><input type="password" id="password_confirm1" name="password" required placeholder="Password" ></td>
                 </tr>
                 <tr>
                     <td width="15%"><b>Confirm Password: </b></td>
-                    <td colspan="3"><input type="password" id="password_confirm2" name="confirm_password" placeholder="Confirm Password" >
+                    <td colspan="3"><input type="password" id="password_confirm2" name="confirm_password" required placeholder="Confirm Password" >
                         <p id="status_for_confirm_password"></p> <!--Showing validate password-->
                     </td>
 
@@ -80,15 +69,15 @@ $(document).ready(function () {
                 </tr>
                 <tr>
                     <td width="15%"><b>City: </b></td>
-                    <td colspan="3"><input type="text" name="city" placeholder="City" ></td>
+                    <td colspan="3"><input type="text" name="city" placeholder="City" required></td>
                 </tr>
                 <tr>
                     <td width="15%"><b>Contact: </b></td>
-                    <td colspan="3"><input type="text" name="contact" placeholder="Contact" ></td>
+                    <td colspan="3"><input type="text" name="contact" placeholder="Contact" required></td>
                 </tr>
                 <tr>
                     <td width="15%"><b>Address: </b></td>
-                    <td colspan="3"><input type="text" name="address" placeholder="Address" ></td>
+                    <td colspan="3"><input type="text" name="address" placeholder="Address" required></td>
                 </tr>
 
 
