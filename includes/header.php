@@ -75,7 +75,7 @@ include ("includes/db.php");
                         <?php }; ?>
                     </a>
                     <uL class="dropdown_menu_header">
-                        <li><a href="customer/my_account.php">Account Setting</a></li>
+                        <li><a href="my_account.php">Account Setting</a></li>
                         <li><a href="logout.php">Logout</a></li>
 
                     </uL>
