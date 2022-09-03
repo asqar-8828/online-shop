@@ -164,6 +164,14 @@ time, mark, audio, video {
 .register a {
     color: white;
 }
+
+#profile img {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 10px;
+    border-radius: 50%;
+}
 .menubar {
     width: 1000px;
     height: 50px;
