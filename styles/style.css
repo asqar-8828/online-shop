@@ -243,6 +243,11 @@ time, mark, audio, video {
     font-weight: bolder;
     text-decoration: underline;
 }
+.user_image img {
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+}
 
 .menubar {
     width: 1000px;

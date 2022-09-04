@@ -67,7 +67,7 @@ include ("includes/db.php");
                 <li class="dropdown_header">
                     <a>
                         <?php if ($data_user['image'] != '') { ?>
-                            <span><img src="customer/customer_images/<?php echo $data_user['image'];?>"></span>
+                            <span><img src="upload-files/<?php echo $data_user['image'];?>"></span>
 
                         <?php } else { ?>
                         <span><img src="images/profile-icon.png"></span>
@@ -75,7 +75,7 @@ include ("includes/db.php");
                         <?php }; ?>
                     </a>
                     <uL class="dropdown_menu_header">
-                        <li><a href="my_account.php">Account Setting</a></li>
+                        <li><a href="my_account.php?action=edit_account">Account Setting</a></li>
                         <li><a href="logout.php">Logout</a></li>
 
                     </uL>

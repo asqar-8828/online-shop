@@ -122,7 +122,7 @@ $(document).ready(function () {
             if ($email_count > 0) {
                 echo "<script>alert('Sorry, your email $email address already exists in our database!  ') </script>";
             } elseif ($row_register['email'] != $email && $password == $confirm_password) {
-                move_uploaded_file($image_tmp,"customer/customer_images/$image");
+                move_uploaded_file($image_tmp,"upload-files/$image");
 
                 $run_insert = mysqli_query($con, "insert into users (ip_address, name, email, password, country, city, contact, user_address, image) values ('$ip','$name','$email','$hash_password','$country','$city','$contact','$address','$image') ");
                 if ($run_insert) {
