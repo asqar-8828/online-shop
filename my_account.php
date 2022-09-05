@@ -7,6 +7,7 @@ include('includes/header.php'); ?>
 
 <div class="content_wrapper">
 
+    <?php if (isset($_SESSION['user_id'])) { ?>
 <div class="user_container">
     <div class="user_content">
 
@@ -20,7 +21,7 @@ include('includes/header.php'); ?>
         }
         switch ($action) {
             case "edit_account";
-            echo $action;
+            include ('users/edit_account.php');
             break;
 
             case "change_password";
@@ -69,7 +70,11 @@ include('includes/header.php'); ?>
     </div>
 
 </div>
+    <?php } else { ?>
+        <h1>Account Setting Page</h1>
+        <h5><a href="index.php?action=login">Log In </a> to Your Account!</h5>
 
+    <?php } ?>
 </div> <!-- /.content_wrapper-->
 <?php include ('includes/footer.php') ?>
 

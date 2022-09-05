@@ -1,5 +1,8 @@
-<select name="country">
-    <option value="">Country...</option>
+
+
+
+<select name="edit_country">
+    <option value="<?php echo $fetch_user['country']; ?>"><?php echo $fetch_user['country']; ?></option>
     <option value="Afganistan">Afghanistan</option>
     <option value="Albania">Albania</option>
     <option value="Algeria">Algeria</option>
