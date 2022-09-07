@@ -24,6 +24,10 @@ include('includes/header.php'); ?>
             include ('users/edit_account.php');
             break;
 
+            case "edit_profile";
+                include ('users/edit_profile.php');
+                break;
+
             case "change_password";
                 echo $action;
                 break;
@@ -62,6 +66,7 @@ include('includes/header.php'); ?>
         <ul>
             <li><a href="my_account.php?action=my_order">My Order</a></li>
             <li><a href="my_account.php?action=edit_account">Edit Account</a></li>
+            <li><a href="my_account.php?action=edit_profile">Edit Profile</a></li>
             <li><a href="my_account.php?action=change_password">Change Password</a></li>
             <li><a href="my_account.php?action=delete_account">Delete Account</a></li>
             <li><a href="my_account.php?action=logout">Logout</a></li>
