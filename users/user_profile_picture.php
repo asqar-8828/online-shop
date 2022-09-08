@@ -56,17 +56,28 @@ if(isset($_POST['user_profile_picture'])) {
         $uploadOk = 1;
         $message = '';
 
+        // Check if the file size more than 5 mb
+        if ($_FILES["image"]["size"] < 5098888) {
         // Check if file already exists.
         if (file_exists($target_file)) {
             $uploadOk = 0;
             $message = "Sorry, file already exists. ";
-        } else {
+        } if ($uploadOk == 0) { // check if uploadOk is set to 0 by an error
+            $message .= "Sorry your file was not uploaded";
+
+            }
+        else {
             if (move_uploaded_file($image_tmp, $target_file)) {
+                $update_image = mysqli_query($con, "update users set image = '$image' where id = '$_SESSION[user_id]'");
                 $message .= "The file" . basename($image) . "has been uploaded.";
             } else {
                 $message .= "Sorry, there was an error uploading your file. ";
 
             }
+        }
+        } // End if the file size more than 5 mb
+        else {
+            $message .= "File size max 5mb ";
         }
     }
 }
