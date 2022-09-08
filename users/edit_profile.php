@@ -1,7 +1,7 @@
 
 <body>
 
- 
+
 <?php
 $select_user = mysqli_query($con, "select * from users where id= '$_SESSION[user_id]'");
 $fetch_user = mysqli_fetch_array($select_user);
