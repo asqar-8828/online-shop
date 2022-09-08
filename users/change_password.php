@@ -27,17 +27,9 @@ $fetch_user = mysqli_fetch_array($select_user);
         <table align="left" width="70%">
             <tr align="left">
                 <td colspan="4">
-                    <h2>Edit Account.</h2><br>
+                    <h2>Change Password.</h2><br>
 
                 </td>
-            </tr>
-            <tr>
-                <td width="15%"><b>Name: </b></td>
-                <td colspan="3"><input type="text" name="name" value="<?php echo $fetch_user['name']; ?>" required placeholder="Name" ></td>
-            </tr>
-            <tr>
-                <td width="15%"><b>Email: </b></td>
-                <td colspan="3"><input type="text" name="email" value="<?php echo $fetch_user['email']; ?>" required placeholder="Email" ></td>
             </tr>
 
             <tr>
@@ -57,41 +49,11 @@ $fetch_user = mysqli_fetch_array($select_user);
 
             </tr>
 
-            <tr>
-                <td width="15%"><b>Image: </b></td>
-                <td colspan="3"><input type="file" name="image"  >
-                    <div>
-                        <img src="upload-files/<?php echo $fetch_user['image']; ?>" width="100" height="70"/>
-                    </div>
-                </td>
-
-            </tr>
-
-            <tr>
-                <td width="15%"><b>Country: </b></td>
-                <td colspan="3">
-                    <?php include('users/edit_country_list.php');  ?>
-
-                </td>
-            </tr>
-            <tr>
-                <td width="15%"><b>City: </b></td>
-                <td colspan="3"><input type="text" name="city" value="<?php echo $fetch_user['city']; ?>" placeholder="City" required></td>
-            </tr>
-            <tr>
-                <td width="15%"><b>Contact: </b></td>
-                <td colspan="3"><input type="text" name="contact" value="<?php echo $fetch_user['contact']; ?>" placeholder="Contact" required></td>
-            </tr>
-            <tr>
-                <td width="15%"><b>Address: </b></td>
-                <td colspan="3"><input type="text" name="address" value="<?php echo $fetch_user['user_address']; ?>" placeholder="Address" required></td>
-            </tr>
-
 
             <tr align="left">
                 <td></td>
                 <td colspan="4">
-                    <input type="submit" name="register" value="Register"/>
+                    <input type="submit" name="change_password" value="Save" />
                 </td>
 
             </tr>
@@ -106,57 +68,33 @@ $fetch_user = mysqli_fetch_array($select_user);
 
 
 <?php
-if(isset($_POST['register'])) {
-    if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirm_password']) && !empty($_POST['name'])) {
-        global $con;
-        $ip = get_ip();
-        $name = $_POST['name'];
-        $email = trim($_POST['email']);
-        $password = trim($_POST['password']);
-        $hash_password = md5($password);
-        $confirm_password = trim($_POST['confirm_password']);
-        $image = $_FILES['image']['name'];
-        $image_tmp = $_FILES['image']['tmp_name'];
-        $country = $_POST['country'];
-        $city = $_POST['city'];
-        $contact = $_POST['contact'];
-        $address = $_POST['address'];
+if(isset($_POST['change_password'])) {
 
-        $check_exist = mysqli_query($con, "select * from users where email = '$email'");
-        $email_count = mysqli_num_rows($check_exist);
-        $row_register = mysqli_fetch_array($check_exist);
+    $current_password = trim($_POST['current_password']);
+    $hash_current_password = md5($current_password);
 
-        if ($email_count > 0) {
-            echo "<script>alert('Sorry, your email $email address already exists in our database!  ') </script>";
-        } elseif ($row_register['email'] != $email && $password == $confirm_password) {
-            move_uploaded_file($image_tmp,"upload-files/$image");
+    $new_password = trim($_POST['new_password']);
+    $hash_new_password = md5($new_password);
+    $confirm_new_password = trim($_POST['confirm_new_password']);
 
-            $run_insert = mysqli_query($con, "insert into users (ip_address, name, email, password, country, city, contact, user_address, image) values ('$ip','$name','$email','$hash_password','$country','$city','$contact','$address','$image') ");
-            if ($run_insert) {
-                $sel_user = mysqli_query($con, "select * from users where email = '$email'");
-                $row_user = mysqli_fetch_array($sel_user);
+    $select_password = mysqli_query($con, "select * from users where password = '$hash_current_password' and id = '$_SESSION[user_id]' ");
 
-                $_SESSION['user_id'] = $row_user['id'] . "<br>";
-                $_SESSION['role'] = $row_user['role'];
-            }
+    // check if current password not empty
+    if(mysqli_num_rows($select_password) == 0) {
+        echo "<script> alert('Your current password is wrong !') </script>";
+    } elseif ($new_password != $confirm_new_password) {
+        echo "<script> alert('Password do not match !') </script>";
+    } else {
+        $update = mysqli_query($con, "update users set password = '$hash_new_password' where id = '$_SESSION[user_id]' ");
 
-            $run_cart = mysqli_query($con, "select * from cart where ip_address = '$ip'");
-            $check_cart = mysqli_num_rows($run_cart);
+        if ($update) {
+            echo "<script> alert('Your password updated successfully !') </script>";
 
-            if ($check_cart == 0) {
-                $_SESSION['email'] = $email;
-                echo "<script> alert('Account has been created successfully')</script>";
-                echo "<script>window.open('customer/my_account.php','_self')</script>";
-            } else {
-                $_SESSION['email'] = $email;
-                echo "<script> alert('Account has been created successfully')</script>";
-                echo "<script>window.open('checkout.php','_self')</script>";
-            }
-
+            echo "<script>window.open(window.location.href,'_self')</script>";
+        } else{
+            echo "<script> alert('Database query failed: mysqli_error($con) !') </script>";
         }
-
     }
-
 }
 ?>
 

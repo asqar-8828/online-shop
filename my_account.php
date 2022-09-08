@@ -33,7 +33,7 @@ include('includes/header.php'); ?>
                 break;
 
             case "change_password";
-                echo $action;
+                include ('users/change_password.php');
                 break;
 
             case "delete_account";
