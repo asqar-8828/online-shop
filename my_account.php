@@ -37,7 +37,7 @@ include('includes/header.php'); ?>
                 break;
 
             case "delete_account";
-                echo $action;
+                include ('users/delete_account.php');
                 break;
 
             case "logout";

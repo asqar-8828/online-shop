@@ -66,7 +66,7 @@ include ("includes/db.php");
             <ul>
                 <li class="dropdown_header">
                     <a>
-                        <?php if ($data_user['image'] != '') { ?>
+                        <?php if (($data_user['image'] != '')) { ?>
                             <span><img src="upload-files/<?php echo $data_user['image'];?>"></span>
 
                         <?php } else { ?>
