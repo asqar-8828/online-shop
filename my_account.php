@@ -40,10 +40,6 @@ include('includes/header.php'); ?>
                 include ('users/delete_account.php');
                 break;
 
-            case "logout";
-                echo $action;
-                break;
-
             default;
             echo "Do something";
             break;
@@ -74,7 +70,7 @@ include('includes/header.php'); ?>
             <li><a href="my_account.php?action=user_profile_picture">User Profile Picture</a></li>
             <li><a href="my_account.php?action=change_password">Change Password</a></li>
             <li><a href="my_account.php?action=delete_account">Delete Account</a></li>
-            <li><a href="my_account.php?action=logout">Logout</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
 
     </div>
