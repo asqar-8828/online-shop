@@ -6,14 +6,43 @@
 <head>
 <title>Web Developer</title>
     <link href="styles/desktop.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/jquery-3.6.1.js"></script>
+
 </head>
 <body>
 <div class="container">
     <div class="header">
         <div class="navbar_header">
-            Admin Area - <?php echo "Admin name"; ?>
+            <h3><a class="admin_name">Admin Area - <?php echo "Admin name"; ?> </a></h3>
 
         </div><!--/.navbar_header-->
+
+        <div class="navbar_right_header">
+
+            <ul class="dropdown_navbar_right">
+                <li>
+                    <a><i class="fa fa-user"></i>&nbsp; <i class="fa fa-caret-down"></i></a>
+                    <ul class="subnavbar_right">
+                        <li><a>User Account</a></li>
+                        <li><a>Logout</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="dropdown_navbar_right">
+                <li>
+                    <a><i class="fa fa-bell"></i>&nbsp; <i class="fa fa-caret-down"></i></a>
+                    <ul class="subnavbar_right">
+                        <li><a>Notificaion </a></li>
+
+
+                    </ul>
+                </li>
+            </ul>
+
+
+        </div><!--/.navbar_right_header-->
 
     </div> <!--/.header-->
     <div class="body_container">
@@ -38,3 +67,11 @@
 
 
 </html>
+
+<script>
+    $(document).ready(function () {
+        $(".dropdown_navbar_right").on('click',function (){
+            $(this).find(".subnavbar_right").slideToggle('fast');
+        });
+    });
+</script>
