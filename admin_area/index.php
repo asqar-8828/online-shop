@@ -52,14 +52,14 @@
 
 
                 <li>
-                    <a href="#"><i class="fa fa-th-large"></i>&nbsp;Products<i class="fa fa-angle-left"></i></a>
+                    <a href="#"><i class="fa fa-th-large"></i>&nbsp;Products<i class="arrow fa fa-angle-left"></i></a>
                     <ul class="left_sidebar_second_level">
                         <li><a href="index.php?action=add_pro">Add Product</a></li>
                         <li><a href="index.php?action=view_pro">View Products</a></li>
                     </ul><!--/.left_sidebar_second_level-->
                 </li>
                     <li>
-                        <a href="#"><i class="fa fa-plus"></i>&nbsp;Categories<i class="fa fa-angle-left"></i></a>
+                        <a href="#"><i class="fa fa-plus"></i>&nbsp;Categories<i class="arrow fa fa-angle-left"></i></a>
                         <ul class="left_sidebar_second_level">
                             <li><a href="index.php?action=add_cat">Add Product</a></li>
                             <li><a href="index.php?action=view_cat">View Products</a></li>
@@ -87,8 +87,13 @@
 
 <script>
     $(document).ready(function () {
+        //Dropdown Menu right
         $(".dropdown_navbar_right").on('click',function (){
             $(this).find(".subnavbar_right").slideToggle('fast');
         });
+        // Collapse left Sidebar
+        $(".left_sidebar_first_level li").on('click',this,function (){
+            $(this).find(".left_sidebar_second_level").slideToggle('fast');
+        })
     });
 </script>

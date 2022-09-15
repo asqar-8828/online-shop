@@ -108,4 +108,28 @@ ul.dropdown_navbar_right ul li:hover {
     line-height: 40px;
     position: relative;
 }
+.arrow {
+    position: absolute;
+    top: 13px;
+    right: 1px;
+    padding: 0 10px 0 3px;
+}
+.left_sidebar_box ul a {
+    padding: 5px 15px;
+    color: rgba(2, 133, 173, 1);
+    text-decoration: none;
+    font-weight: bold;
+}
+.left_sidebar_box ul li:hover {
+    background: rgba(0, 0, 0, 0.07);
+}
+.left_sidebar_box ul ul li{
+    position: relative;
+}
+.left_sidebar_box ul ul li:hover{
+    background: rgba(0, 0, 0, 0.03);
+}
+.left_sidebar_box ul ul li a{
+    margin-left: 20px;
+}
 /*left Sidebar End */
