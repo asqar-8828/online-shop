@@ -48,7 +48,24 @@
     <div class="body_container">
         <div class="left_sidebar">
             <div class="left_sidebar_box">
-                This is left sidebar
+                <ul class="left_sidebar_first_level">
+
+
+                <li>
+                    <a href="#"><i class="fa fa-th-large"></i>&nbsp;Products<i class="fa fa-angle-left"></i></a>
+                    <ul class="left_sidebar_second_level">
+                        <li><a href="index.php?action=add_pro">Add Product</a></li>
+                        <li><a href="index.php?action=view_pro">View Products</a></li>
+                    </ul><!--/.left_sidebar_second_level-->
+                </li>
+                    <li>
+                        <a href="#"><i class="fa fa-plus"></i>&nbsp;Categories<i class="fa fa-angle-left"></i></a>
+                        <ul class="left_sidebar_second_level">
+                            <li><a href="index.php?action=add_cat">Add Product</a></li>
+                            <li><a href="index.php?action=view_cat">View Products</a></li>
+                        </ul><!--/.left_sidebar_second_level-->
+                    </li>
+                </ul><!--/.left_sidebar_first_level-->
             </div> <!--left_sidebar_box-->
         </div> <!--/.left_sidebar-->
         <div class="content">
