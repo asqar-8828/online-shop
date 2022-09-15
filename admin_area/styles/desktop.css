@@ -176,7 +176,7 @@ ul.dropdown_navbar_right ul li:hover {
     padding: 3px 7px;
 }
 .view_product_box th, .view_product_box td {
-    text-align: center;
+    text-align: left;
 
 }
 /* View Product Ends*/

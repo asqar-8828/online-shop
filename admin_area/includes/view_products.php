@@ -25,20 +25,36 @@
                     <th>Edit</th>
                 </tr>
             </thead>
+            <?php
+            global $con;
+                $all_products = mysqli_query($con, "select * from products order by product_id DESC ");
+                $i = 1;
+                while ($row = mysqli_fetch_array($all_products)){
+
+            ?>
             <tbody>
                 <tr>
                     <td><input type="checkbox" name="deleteAll[]" value=""></td>
-                    <td>ID</td>
-                    <td>Title</td>
-                    <td>Price</td>
-                    <td>Image</td>
-                    <td>Views</td>
-                    <td>Date</td>
-                    <td>Status</td>
-                    <td>Delete</td>
-                    <td>Edit</td>
+                    <td><?php echo $i; ?></td>
+                    <td><?php echo $row['product_title']; ?></td>
+                    <td><?php echo $row['product_price']; ?></td>
+                    <td><img src="product_images/<?php echo $row['product_image']?>" width="70" height="50"/></td>
+                    <td><?php echo $row['views'];?></td>
+                    <td><?php echo $row['date'];?></td>
+                    <td>
+                        <?php
+                            if ($row['visible'] == 1) {
+                                echo "Approved";
+                            } else {
+                                echo "Pending";
+                            }
+                        ?>
+                    </td><!--/status-->
+                    <td><a href="index.php?action=view_pro&delete_product=<?php echo $row['product_id'];?>">Delete</a></td>
+                    <td><a href="index.php?action=edit_pro&product_id=<?php echo $row['product_id'];?>">Edit</a></td>
                 </tr>
             </tbody>
+            <?php $i++; } ?>
 
         </table>
 
