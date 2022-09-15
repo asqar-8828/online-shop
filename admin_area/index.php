@@ -81,6 +81,11 @@
                     case 'add_pro';
                     include 'includes/insert_product.php';
                     break;
+
+                    case 'view_pro';
+                        include 'includes/view_products.php';
+                        break;
+
                 }
 
                 ?>

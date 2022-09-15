@@ -134,6 +134,8 @@ ul.dropdown_navbar_right ul li:hover {
 }
 /*left Sidebar End */
 
+/* Add Product Here*/
+
 .border_bottom {
     border-bottom: 0.01px solid rgba(0, 0, 0, 0.2);
     margin: 10px 0;
@@ -162,3 +164,19 @@ ul.dropdown_navbar_right ul li:hover {
     border: 0.01px solid rgba(28, 130, 199, 0.8);
     color: white;
 }
+
+/* Add Product Ends*/
+/* View Product Starts*/
+
+.search_bar {
+    float: right;
+    margin-bottom: 15px;
+}
+.search_bar input[type=text] {
+    padding: 3px 7px;
+}
+.view_product_box th, .view_product_box td {
+    text-align: center;
+
+}
+/* View Product Ends*/
