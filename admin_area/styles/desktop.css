@@ -18,8 +18,8 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     //font-size: 100%;
-//font: inherit;
-    vertical-align: baseline;
+    //font: inherit;
+    //vertical-align: baseline;
 }
 
 .container {
@@ -133,3 +133,32 @@ ul.dropdown_navbar_right ul li:hover {
     margin-left: 20px;
 }
 /*left Sidebar End */
+
+.border_bottom {
+    border-bottom: 0.01px solid rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+.form_box input[type=text] {
+    padding: 3px 10px;
+    margin: 5px 0;
+}
+.form_box select {
+    width: 40%;
+    padding: 3px 10px;
+    margin: 5px 0;
+}
+
+.form_box input[type=file]{
+    margin: 5px 0;
+}
+.form_box textarea {
+    width: 80%;
+}
+
+.form_box input[type=submit] {
+    padding: 10px 15px;
+    background: rgba(28, 130, 199, 0.9);
+    border: 0.01px solid rgba(28, 130, 199, 0.8);
+    color: white;
+}

@@ -1,3 +1,4 @@
+<?php include ('../includes/db.php');  ?>
 
 <!DOCTYPE html>
 
@@ -70,7 +71,19 @@
         </div> <!--/.left_sidebar-->
         <div class="content">
             <div class="content_box">
-                This is content box
+                <?php
+                if (isset($_GET['action'])) {
+                    $action = $_GET['action'];
+                } else {
+                    $action = '';
+                }
+                switch ($action) {
+                    case 'add_pro';
+                    include 'includes/insert_product.php';
+                    break;
+                }
+
+                ?>
 
             </div><!--/.content_box-->
 

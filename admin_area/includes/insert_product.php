@@ -1,25 +1,21 @@
 
-<?php
-include ('includes/db.php');
-?>
+        <div class="form_box">
 
-<html>
-    <head>
-        <title>Inserting product</title>
-    </head>
 
-    <body style="background-color: skyblue">
-        <form action="insert_product.php" method="post" enctype="multipart/form-data">
-            <table align="centre" width="795" border="2" bgcolor="#187eae">
-                <tr align="center">
-                    <td colspan="7"><h2>Insert New Post Here</h2></td>
+        <form action="" method="post" enctype="multipart/form-data">
+            <table align="centre" width="100%" >
+                <tr>
+                    <td colspan="7">
+                        <h2>Add Product</h2>
+                    <div class="border_bottom"></div><!--/.border_bottom-->
+                    </td>
                 </tr>
                 <tr>
-                    <td align="right"><b>Product Title</b></td>
+                    <td><b>Product Title</b></td>
                     <td><input type="text" name="product_title" size="60" required/></td>
                 </tr>
                 <tr>
-                    <td align="right"><b>Product Category:</b>
+                    <td><b>Product Category:</b>
                     </td>
                     <td>
                         <select name="product_cat">
@@ -41,7 +37,7 @@ include ('includes/db.php');
                 </tr>
 
                 <tr>
-                    <td align="right"><b>Product Brand:</b>
+                    <td><b>Product Brand:</b>
                     </td>
                     <td>
                         <select name="product_brand">
@@ -61,33 +57,31 @@ include ('includes/db.php');
                 </tr>
 
                 <tr>
-                    <td style="text-align: right"><b>Product Image: </b></td>
+                    <td><b>Product Image: </b></td>
                     <td><input type="file" name="product_image" /></td>
                 </tr>
                 <tr>
-                    <td style="text-align: right"><b>Product Price: </b></td>
+                    <td><b>Product Price: </b></td>
                     <td><input type="text" name="product_price" required /></td>
                 </tr>
                 <tr>
-                    <td style="text-align: right"><b>Product Description</b></td>
-                    <td><textarea name="product_desc" cols="20" rows="10"></textarea></td>
+                    <td valign="top"><b>Product Description</b></td>
+                    <td><textarea name="product_desc" rows="10"></textarea></td>
                 </tr>
                 <tr>
-                    <td style="text-align: right"><b>Product Keywords</b></td>
+                    <td><b>Product Keywords</b></td>
                     <td><input type="text" name="product_keywords" required></td>
                 </tr>
 
-                <tr style="text-align: center">
-                    <td colspan="7"><input type="submit" name="insert_post" value="Insert Product Now" /></td>
+                <tr>
+                    <td></td>
+                    <td colspan="7"><input type="submit" name="insert_post" value="Add Product" /></td>
 
                 </tr>
             </table>
         </form>
+        </div> <!--/.form_box-->
 
-    </body>
-
-
-</html>
 
 <?php
 
