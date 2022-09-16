@@ -34,7 +34,7 @@
             ?>
             <tbody>
                 <tr>
-                    <td><input type="checkbox" name="deleteAll[]" value=""></td>
+                    <td><input type="checkbox" name="deleteAll[]" value="<?php echo $row['product_id'];?>"></td>
                     <td><?php echo $i; ?></td>
                     <td><?php echo $row['product_title']; ?></td>
                     <td><?php echo $row['product_price']; ?></td>
@@ -54,9 +54,40 @@
                     <td><a href="index.php?action=edit_pro&product_id=<?php echo $row['product_id'];?>">Edit</a></td>
                 </tr>
             </tbody>
-            <?php $i++; } ?>
+            <?php $i++; } //End While loop?>
+            <tr>
+                <td><input type="submit" name="delete_all" value="Remove"/></td>
+            </tr>
 
         </table>
 
     </form>
 </div><!--/.view_product_box-->
+
+<?php
+//Delete Product
+
+if(isset($_GET['delete_product'])){
+    $delete_product = mysqli_query($con, "delete from products where product_id = '$_GET[delete_product]' ");
+    if ($delete_product){
+        echo "<script>alert('Product has been deleted successfully')</script>";
+        echo "<script>window.open('index.php?action=view_pro','_self')</script>";
+    }
+}
+
+//Remove items selected using foreach loop
+if (isset($_POST['deleteAll'])){
+    $remove = $_POST['deleteAll'];
+
+    foreach ($remove as $key) {
+        $run_remove = mysqli_query($con, "delete from products where product_id = '$key'");
+
+        if ($run_remove) {
+            echo "<script>alert('Items selected have been removed successfully!')</script>";
+            echo "<script>window.open('index.php?action=view_pro','_self')</script>";
+        } else{
+            echo "<script>alert('Mysqli Failed: mysqli_error($con)!')</script>";
+        }
+    }
+}
+?>
