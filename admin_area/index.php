@@ -86,6 +86,10 @@
                         include 'includes/view_products.php';
                         break;
 
+
+                    case 'edit_pro';
+                        include 'includes/edit_product.php';
+                        break;
                 }
 
                 ?>
