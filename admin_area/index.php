@@ -100,6 +100,10 @@
                     case 'view_cat';
                         include 'includes/view_categories.php';
                         break;
+
+                    case 'edit_cat';
+                        include 'includes/edit_category.php';
+                        break;
                 }
 
                 ?>
