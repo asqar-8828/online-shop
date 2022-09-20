@@ -51,6 +51,7 @@
             <div class="left_sidebar_box">
                 <ul class="left_sidebar_first_level">
 
+                    <li><a href="../index.php" target="_blank"><i class="fa fa-dashboard"></i>My Site</a></li>
 
                 <li>
                     <a href="#"><i class="fa fa-th-large"></i>&nbsp;Products<i class="arrow fa fa-angle-left"></i></a>
@@ -89,6 +90,11 @@
 
                     case 'edit_pro';
                         include 'includes/edit_product.php';
+                        break;
+
+
+                    case 'add_cat';
+                        include 'includes/insert_category.php';
                         break;
                 }
 
