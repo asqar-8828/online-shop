@@ -67,6 +67,14 @@
                             <li><a href="index.php?action=view_cat">View Categories</a></li>
                         </ul><!--/.left_sidebar_second_level-->
                     </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-plus"></i>Brands<i class="arrow fa fa-angle-left"></i></a>
+                        <ul class="left_sidebar_second_level">
+                            <li><a href="index.php?action=add_brand">Add Brand</a></li>
+                            <li><a href="index.php?action=view_brands">View Brands</a></li>
+                        </ul><!--/.left_sidebar_second_level-->
+                    </li>
                 </ul><!--/.left_sidebar_first_level-->
             </div> <!--left_sidebar_box-->
         </div> <!--/.left_sidebar-->
@@ -103,6 +111,11 @@
 
                     case 'edit_cat';
                         include 'includes/edit_category.php';
+                        break;
+
+
+                    case 'add_brand';
+                        include 'includes/insert_brand.php';
                         break;
                 }
 
