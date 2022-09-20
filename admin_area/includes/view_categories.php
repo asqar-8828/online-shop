@@ -57,13 +57,13 @@
 </div><!--/.view_product_box-->
 
 <?php
-//Delete Product
+//Delete Category
 
-if(isset($_GET['delete_product'])){
-    $delete_product = mysqli_query($con, "delete from products where product_id = '$_GET[delete_product]' ");
-    if ($delete_product){
-        echo "<script>alert('Product has been deleted successfully')</script>";
-        echo "<script>window.open('index.php?action=view_pro','_self')</script>";
+if(isset($_GET['delete_cat'])){
+    $delete_cat = mysqli_query($con, "delete from categories where cat_id = '$_GET[delete_cat]' ");
+    if ($delete_cat){
+        echo "<script>alert('Product Category has been deleted successfully')</script>";
+        echo "<script>window.open('index.php?action=view_cat','_self')</script>";
     }
 }
 
@@ -72,11 +72,11 @@ if (isset($_POST['deleteAll'])){
     $remove = $_POST['deleteAll'];
 
     foreach ($remove as $key) {
-        $run_remove = mysqli_query($con, "delete from products where product_id = '$key'");
+        $run_remove = mysqli_query($con, "delete from categories where cat_id = '$key'");
 
         if ($run_remove) {
             echo "<script>alert('Items selected have been removed successfully!')</script>";
-            echo "<script>window.open('index.php?action=view_pro','_self')</script>";
+            echo "<script>window.open('index.php?action=view_cat','_self')</script>";
         } else{
             echo "<script>alert('Mysqli Failed: mysqli_error($con)!')</script>";
         }
