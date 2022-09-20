@@ -63,8 +63,8 @@
                     <li>
                         <a href="#"><i class="fa fa-plus"></i>&nbsp;Categories<i class="arrow fa fa-angle-left"></i></a>
                         <ul class="left_sidebar_second_level">
-                            <li><a href="index.php?action=add_cat">Add Product</a></li>
-                            <li><a href="index.php?action=view_cat">View Products</a></li>
+                            <li><a href="index.php?action=add_cat">Add Category</a></li>
+                            <li><a href="index.php?action=view_cat">View Categories</a></li>
                         </ul><!--/.left_sidebar_second_level-->
                     </li>
                 </ul><!--/.left_sidebar_first_level-->
@@ -95,6 +95,10 @@
 
                     case 'add_cat';
                         include 'includes/insert_category.php';
+                        break;
+
+                    case 'view_cat';
+                        include 'includes/view_categories.php';
                         break;
                 }
 
