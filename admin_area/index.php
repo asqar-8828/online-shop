@@ -117,6 +117,11 @@
                     case 'add_brand';
                         include 'includes/insert_brand.php';
                         break;
+
+
+                    case 'view_brands';
+                        include 'includes/view_brands.php';
+                        break;
                 }
 
                 ?>

@@ -1,0 +1,85 @@
+
+<div class="view_product_box">
+
+    <h2>View Brands</h2>
+    <div class="border_bottom">
+
+    </div><!--/.border_bottom-->
+
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="search_bar">
+            <input type="text" id="search" placeholder="Type to search">
+        </div>
+        <table width="100%">
+            <thead>
+            <tr>
+                <th><input type="checkbox" id="checkAll">Check</th>
+                <th>ID</th>
+                <th>Brand Title</th>
+                <th>Status</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+            </thead>
+            <?php
+            global $con;
+            $all_brands = mysqli_query($con, "select * from brands order by brand_id DESC ");
+            $i = 1;
+            while ($row = mysqli_fetch_array($all_brands)){
+
+                ?>
+                <tbody>
+                <tr>
+                    <td><input type="checkbox" name="deleteAll[]" value="<?php echo $row['brand_id'];?>"></td>
+                    <td><?php echo $i; ?></td>
+                    <td><?php echo $row['brand_title']; ?></td>
+                    <td>
+                        <?php
+                        if ($row['visible'] == 1) {
+                            echo "Approved";
+                        } else {
+                            echo "Pending";
+                        }
+                        ?>
+                    </td><!--/status-->
+                    <td><a href="index.php?action=view_brand&delete_brand=<?php echo $row['brand_id'];?>">Delete</a></td>
+                    <td><a href="index.php?action=edit_brand&brand_id=<?php echo $row['brand_id'];?>">Edit</a></td>
+                </tr>
+                </tbody>
+                <?php $i++; } //End While loop?>
+            <tr>
+                <td><input type="submit" name="delete_all" value="Remove"/></td>
+            </tr>
+
+        </table>
+
+    </form>
+</div><!--/.view_product_box-->
+
+<?php
+//Delete Category
+
+if(isset($_GET['delete_cat'])){
+    $delete_cat = mysqli_query($con, "delete from categories where cat_id = '$_GET[delete_cat]' ");
+    if ($delete_cat){
+        echo "<script>alert('Product Category has been deleted successfully')</script>";
+        echo "<script>window.open('index.php?action=view_cat','_self')</script>";
+    }
+}
+
+//Remove items selected using foreach loop
+if (isset($_POST['deleteAll'])){
+    $remove = $_POST['deleteAll'];
+
+    foreach ($remove as $key) {
+        $run_remove = mysqli_query($con, "delete from categories where cat_id = '$key'");
+
+        if ($run_remove) {
+            echo "<script>alert('Items selected have been removed successfully!')</script>";
+            echo "<script>window.open('index.php?action=view_cat','_self')</script>";
+        } else{
+            echo "<script>alert('Mysqli Failed: mysqli_error($con)!')</script>";
+        }
+    }
+}
+?>
