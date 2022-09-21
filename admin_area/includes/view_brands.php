@@ -42,7 +42,7 @@
                         }
                         ?>
                     </td><!--/status-->
-                    <td><a href="index.php?action=view_brand&delete_brand=<?php echo $row['brand_id'];?>">Delete</a></td>
+                    <td><a href="index.php?action=view_brands&delete_brand=<?php echo $row['brand_id'];?>">Delete</a></td>
                     <td><a href="index.php?action=edit_brand&brand_id=<?php echo $row['brand_id'];?>">Edit</a></td>
                 </tr>
                 </tbody>
@@ -57,13 +57,13 @@
 </div><!--/.view_product_box-->
 
 <?php
-//Delete Category
+//Delete Brands
 
-if(isset($_GET['delete_cat'])){
-    $delete_cat = mysqli_query($con, "delete from categories where cat_id = '$_GET[delete_cat]' ");
-    if ($delete_cat){
-        echo "<script>alert('Product Category has been deleted successfully')</script>";
-        echo "<script>window.open('index.php?action=view_cat','_self')</script>";
+if(isset($_GET['delete_brand'])){
+    $delete_brand = mysqli_query($con, "delete from brands where brand_id = '$_GET[delete_brand]' ");
+    if ($delete_brand){
+        echo "<script>alert('Product Brand has been deleted successfully')</script>";
+        echo "<script>window.open('index.php?action=view_brands','_self')</script>";
     }
 }
 
@@ -72,11 +72,11 @@ if (isset($_POST['deleteAll'])){
     $remove = $_POST['deleteAll'];
 
     foreach ($remove as $key) {
-        $run_remove = mysqli_query($con, "delete from categories where cat_id = '$key'");
+        $run_remove = mysqli_query($con, "delete from brands where brand_id = '$key'");
 
         if ($run_remove) {
             echo "<script>alert('Items selected have been removed successfully!')</script>";
-            echo "<script>window.open('index.php?action=view_cat','_self')</script>";
+            echo "<script>window.open('index.php?action=view_brands','_self')</script>";
         } else{
             echo "<script>alert('Mysqli Failed: mysqli_error($con)!')</script>";
         }
