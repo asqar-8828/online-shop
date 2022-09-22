@@ -27,7 +27,7 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] != 'admin') {
 <div class="container">
     <div class="header">
         <div class="navbar_header">
-            <h3><a class="admin_name">Admin Area - <?php echo "Admin name"; ?> </a></h3>
+            <h3><a class="admin_name">Admin Area - <?php echo $_SESSION['name']; ?> </a></h3>
 
         </div><!--/.navbar_header-->
 
@@ -38,7 +38,7 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] != 'admin') {
                     <a><i class="fa fa-user"></i>&nbsp; <i class="fa fa-caret-down"></i></a>
                     <ul class="subnavbar_right">
                         <li><a>User Account</a></li>
-                        <li><a>Logout</a></li>
+                        <li><a href="logout.php">Logout</a></li>
 
                     </ul>
                 </li>
