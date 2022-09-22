@@ -122,6 +122,10 @@
                     case 'view_brands';
                         include 'includes/view_brands.php';
                         break;
+
+                    case 'edit_brand';
+                        include 'includes/edit_brand.php';
+                        break;
                 }
 
                 ?>
