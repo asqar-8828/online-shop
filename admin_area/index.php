@@ -75,6 +75,14 @@
                             <li><a href="index.php?action=view_brands">View Brands</a></li>
                         </ul><!--/.left_sidebar_second_level-->
                     </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-gift"></i>Admin<i class="arrow fa fa-angle-left"></i></a>
+                        <ul class="left_sidebar_second_level">
+                            <li><a href="index.php?action=add_user">Add User</a></li>
+                            <li><a href="index.php?action=view_users">List Users</a></li>
+                        </ul><!--/.left_sidebar_second_level-->
+                    </li>
                 </ul><!--/.left_sidebar_first_level-->
             </div> <!--left_sidebar_box-->
         </div> <!--/.left_sidebar-->
@@ -126,6 +134,11 @@
                     case 'edit_brand';
                         include 'includes/edit_brand.php';
                         break;
+
+                    case 'view_users';
+                        include 'includes/view_users.php';
+                        break;
+
                 }
 
                 ?>
