@@ -67,13 +67,13 @@
 </div><!--/.view_product_box-->
 
 <?php
-//Delete Product
+//Delete User Account
 
-if(isset($_GET['delete_product'])){
-    $delete_product = mysqli_query($con, "delete from products where product_id = '$_GET[delete_product]' ");
-    if ($delete_product){
-        echo "<script>alert('Product has been deleted successfully')</script>";
-        echo "<script>window.open('index.php?action=view_pro','_self')</script>";
+if(isset($_GET['delete_user'])){
+    $delete_user = mysqli_query($con, "delete from users where id = '$_GET[delete_user]' ");
+    if ($delete_user){
+        echo "<script>alert('User Account has been deleted successfully')</script>";
+        echo "<script>window.open('index.php?action=view_users','_self')</script>";
     }
 }
 
@@ -82,11 +82,11 @@ if (isset($_POST['deleteAll'])){
     $remove = $_POST['deleteAll'];
 
     foreach ($remove as $key) {
-        $run_remove = mysqli_query($con, "delete from products where product_id = '$key'");
+        $run_remove = mysqli_query($con, "delete from users where id = '$key'");
 
         if ($run_remove) {
             echo "<script>alert('Items selected have been removed successfully!')</script>";
-            echo "<script>window.open('index.php?action=view_pro','_self')</script>";
+            echo "<script>window.open('index.php?action=view_users','_self')</script>";
         } else{
             echo "<script>alert('Mysqli Failed: mysqli_error($con)!')</script>";
         }
