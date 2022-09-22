@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['role']) && $_SESSION['role'] != 'admin') {
+    echo "<script>window.open('login.php','_self')</script>";
+}else {
+
+?>
+
+
+
+
 <?php include ('../includes/db.php');  ?>
 
 <!DOCTYPE html>
@@ -168,3 +180,5 @@
         })
     });
 </script>
+
+<?php } ?>
